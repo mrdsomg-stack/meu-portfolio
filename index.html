@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Meu Portfólio | Especialista em Dados & RM</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <style>
+        :root {
+            --bg-color: #0b0d17;
+            --card-bg: #161b22;
+            --text-color: #e6edf3;
+            --accent-color: #0078d4; /* Azul Power BI/Microsoft */
+            --secondary-color: #2ea043; /* Verde RM/Sucesso */
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-color: var(--bg-color);
+            color: var(--text-color);
+            margin: 0;
+            line-height: 1.6;
+        }
+
+        header {
+            height: 100vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            background: linear-gradient(135deg, #0b0d17 0%, #161b22 100%);
+        }
+
+        .profile-img {
+            width: 180px;
+            height: 180px;
+            border-radius: 50%;
+            border: 4px solid var(--accent-color);
+            margin-bottom: 20px;
+            object-fit: cover;
+        }
+
+        h1 { font-size: 3rem; margin: 0; color: var(--accent-color); }
+        p.subtitle { font-size: 1.2rem; color: #8b949e; }
+
+        section { padding: 80px 10%; }
+        h2 { border-bottom: 2px solid var(--accent-color); display: inline-block; margin-bottom: 40px; }
+
+        .grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 20px;
+        }
+
+        .card {
+            background: var(--card-bg);
+            padding: 25px;
+            border-radius: 10px;
+            border: 1px solid #30363d;
+            transition: transform 0.3s;
+        }
+
+        .card:hover { transform: translateY(-10px); border-color: var(--accent-color); }
+
+        .btn {
+            background: var(--accent-color);
+            color: white;
+            padding: 10px 25px;
+            text-decoration: none;
+            border-radius: 5px;
+            display: inline-block;
+            margin-top: 20px;
+        }
+
+        .skills-tag {
+            display: inline-block;
+            background: #21262d;
+            padding: 5px 12px;
+            border-radius: 15px;
+            margin: 5px;
+            font-size: 0.9rem;
+            border: 1px solid #30363d;
+        }
+
+        footer { text-align: center; padding: 40px; background: #010409; font-size: 0.9rem; color: #8b949e; }
+    </style>
+</head>
+<body>
+
+    <header>
+        <img src="https://via.placeholder.com/180" alt="Sua Foto" class="profile-img">
+        <h1>Seu Nome Aqui</h1>
+        <p class="subtitle">Especialista RM TOTVS | Analista de Dados | Contabilidade</p>
+        <div class="social">
+            <a href="#" style="color: white; font-size: 1.5rem; margin: 0 10px;"><i class="fab fa-linkedin"></i></a>
+            <a href="#" style="color: white; font-size: 1.5rem; margin: 0 10px;"><i class="fab fa-github"></i></a>
+        </div>
+    </header>
+
+    <section id="sobre">
+        <h2>Sobre Mim</h2>
+        <p>Analista focado em otimização de processos contábeis e financeiros utilizando o ecossistema <strong>TOTVS RM</strong> e <strong>Power BI</strong>. Especialista em transformar dados brutos em inteligência de negócio, com sólida base técnica em SQL e Power Query.</p>
+    </section>
+
+    <section id="portfolio">
+        <h2>Trabalhos Realizados</h2>
+        <div class="grid">
+            <div class="card">
+                <h3>Automação de Análise Contábil de Encargos</h3>
+                <p>Desenvolvimento de solução para conferência automatizada de encargos sociais, integrando dados do RM Labore/Chronus com dashboards dinâmicos.</p>
+                <div class="skills-tag">Power BI</div>
+                <div class="skills-tag">SQL Server</div>
+                <div class="skills-tag">Excel VBA</div>
+            </div>
+            
+            <div class="card">
+                <h3>Relatórios RM TOTVS</h3>
+                <p>Criação de sentenças SQL complexas e geradores de saídas para conformidade contábil e auditoria interna.</p>
+                <div class="skills-tag">TOTVS RM</div>
+                <div class="skills-tag">Consultas SQL</div>
+            </div>
+        </div>
+    </section>
+
+    <section id="skills">
+        <h2>Habilidades Técnicas</h2>
+        <div>
+            <span class="skills-tag">Power BI & DAX</span>
+            <span class="skills-tag">SQL Server (T-SQL)</span>
+            <span class="skills-tag">Power Query (M)</span>
+            <span class="skills-tag">RM TOTVS (BackOffice/RH)</span>
+            <span class="skills-tag">Contabilidade Digital</span>
+            <span class="skills-tag">Análise de Dados</span>
+        </div>
+    </section>
+
+    <footer>
+        <p>&copy; 2026 - Desenvolvido por Você | São Luís - MA</p>
+    </footer>
+
+</body>
+</html>
