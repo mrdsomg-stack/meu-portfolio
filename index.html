@@ -1,143 +1,626 @@
 <!DOCTYPE html>
-<html lang="pt-br">
+<html lang="pt-BR">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Meu Portfólio | Especialista em Dados & RM</title>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
-    <style>
-        :root {
-            --bg-color: #0b0d17;
-            --card-bg: #161b22;
-            --text-color: #e6edf3;
-            --accent-color: #0078d4; /* Azul Power BI/Microsoft */
-            --secondary-color: #2ea043; /* Verde RM/Sucesso */
-        }
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Marcos Roberto | Contador</title>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700;900&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --purple-50: #f3f0ff;
+    --purple-100: #e5deff;
+    --purple-300: #a78bfa;
+    --purple-500: #7c3aed;
+    --purple-700: #5b21b6;
+    --purple-900: #2e1065;
+    --gold: #c9a84c;
+    --dark: #0f0a1e;
+    --dark2: #1a1030;
+    --text: #e8e0f8;
+    --muted: #9d8fbf;
+  }
 
-        body {
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-            background-color: var(--bg-color);
-            color: var(--text-color);
-            margin: 0;
-            line-height: 1.6;
-        }
+  * { margin: 0; padding: 0; box-sizing: border-box; }
 
-        header {
-            height: 100vh;
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
-            align-items: center;
-            text-align: center;
-            background: linear-gradient(135deg, #0b0d17 0%, #161b22 100%);
-        }
+  html { scroll-behavior: smooth; }
 
-        .profile-img {
-            width: 180px;
-            height: 180px;
-            border-radius: 50%;
-            border: 4px solid var(--accent-color);
-            margin-bottom: 20px;
-            object-fit: cover;
-        }
+  body {
+    background: var(--dark);
+    color: var(--text);
+    font-family: 'DM Sans', sans-serif;
+    font-size: 16px;
+    line-height: 1.7;
+    overflow-x: hidden;
+  }
 
-        h1 { font-size: 3rem; margin: 0; color: var(--accent-color); }
-        p.subtitle { font-size: 1.2rem; color: #8b949e; }
+  /* Background geometric pattern */
+  body::before {
+    content: '';
+    position: fixed;
+    inset: 0;
+    background-image:
+      radial-gradient(ellipse at 20% 10%, rgba(124,58,237,0.15) 0%, transparent 50%),
+      radial-gradient(ellipse at 80% 80%, rgba(91,33,182,0.1) 0%, transparent 50%);
+    pointer-events: none;
+    z-index: 0;
+  }
 
-        section { padding: 80px 10%; }
-        h2 { border-bottom: 2px solid var(--accent-color); display: inline-block; margin-bottom: 40px; }
+  /* NAV */
+  nav {
+    position: fixed;
+    top: 0; left: 0; right: 0;
+    z-index: 100;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 1.2rem 5%;
+    backdrop-filter: blur(16px);
+    background: rgba(15,10,30,0.75);
+    border-bottom: 1px solid rgba(124,58,237,0.2);
+  }
 
-        .grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 20px;
-        }
+  .logo {
+    font-family: 'Playfair Display', serif;
+    font-size: 1.4rem;
+    font-weight: 700;
+    color: var(--purple-300);
+    letter-spacing: 0.02em;
+    text-decoration: none;
+  }
 
-        .card {
-            background: var(--card-bg);
-            padding: 25px;
-            border-radius: 10px;
-            border: 1px solid #30363d;
-            transition: transform 0.3s;
-        }
+  .nav-links {
+    display: flex;
+    gap: 2rem;
+    list-style: none;
+  }
 
-        .card:hover { transform: translateY(-10px); border-color: var(--accent-color); }
+  .nav-links a {
+    color: var(--muted);
+    text-decoration: none;
+    font-size: 0.9rem;
+    font-weight: 500;
+    letter-spacing: 0.05em;
+    text-transform: uppercase;
+    transition: color 0.2s;
+  }
 
-        .btn {
-            background: var(--accent-color);
-            color: white;
-            padding: 10px 25px;
-            text-decoration: none;
-            border-radius: 5px;
-            display: inline-block;
-            margin-top: 20px;
-        }
+  .nav-links a:hover { color: var(--purple-300); }
 
-        .skills-tag {
-            display: inline-block;
-            background: #21262d;
-            padding: 5px 12px;
-            border-radius: 15px;
-            margin: 5px;
-            font-size: 0.9rem;
-            border: 1px solid #30363d;
-        }
+  /* HERO */
+  .hero {
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    padding: 8rem 5% 4rem;
+    position: relative;
+    z-index: 1;
+  }
 
-        footer { text-align: center; padding: 40px; background: #010409; font-size: 0.9rem; color: #8b949e; }
-    </style>
+  .hero-content {
+    max-width: 700px;
+  }
+
+  .hero-tag {
+    display: inline-block;
+    background: rgba(124,58,237,0.15);
+    border: 1px solid rgba(124,58,237,0.4);
+    color: var(--purple-300);
+    font-size: 0.8rem;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    padding: 0.4rem 1rem;
+    border-radius: 2rem;
+    margin-bottom: 1.5rem;
+    animation: fadeUp 0.8s ease both;
+  }
+
+  .hero h1 {
+    font-family: 'Playfair Display', serif;
+    font-size: clamp(3rem, 7vw, 5.5rem);
+    font-weight: 900;
+    line-height: 1.05;
+    color: #fff;
+    animation: fadeUp 0.8s 0.1s ease both;
+  }
+
+  .hero h1 span {
+    color: var(--purple-300);
+  }
+
+  .hero-subtitle {
+    margin-top: 1.2rem;
+    font-size: 1.1rem;
+    color: var(--muted);
+    max-width: 480px;
+    animation: fadeUp 0.8s 0.2s ease both;
+  }
+
+  .hero-badges {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.6rem;
+    margin-top: 2rem;
+    animation: fadeUp 0.8s 0.3s ease both;
+  }
+
+  .badge {
+    background: rgba(124,58,237,0.12);
+    border: 1px solid rgba(124,58,237,0.3);
+    color: var(--purple-300);
+    padding: 0.35rem 0.9rem;
+    border-radius: 0.3rem;
+    font-size: 0.82rem;
+    font-weight: 500;
+  }
+
+  .hero-cta {
+    display: flex;
+    gap: 1rem;
+    margin-top: 2.5rem;
+    flex-wrap: wrap;
+    animation: fadeUp 0.8s 0.4s ease both;
+  }
+
+  .btn-primary {
+    background: var(--purple-500);
+    color: #fff;
+    padding: 0.85rem 2rem;
+    border-radius: 0.4rem;
+    font-size: 0.95rem;
+    font-weight: 500;
+    text-decoration: none;
+    transition: background 0.2s, transform 0.15s;
+    border: none;
+    cursor: pointer;
+  }
+
+  .btn-primary:hover { background: var(--purple-700); transform: translateY(-2px); }
+
+  .btn-outline {
+    background: transparent;
+    color: var(--purple-300);
+    padding: 0.85rem 2rem;
+    border-radius: 0.4rem;
+    font-size: 0.95rem;
+    font-weight: 500;
+    text-decoration: none;
+    border: 1px solid rgba(124,58,237,0.5);
+    transition: background 0.2s, transform 0.15s;
+    cursor: pointer;
+  }
+
+  .btn-outline:hover { background: rgba(124,58,237,0.1); transform: translateY(-2px); }
+
+  /* Decorative line */
+  .hero-line {
+    position: absolute;
+    right: 5%;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 1px;
+    height: 280px;
+    background: linear-gradient(to bottom, transparent, var(--purple-500), transparent);
+    opacity: 0.4;
+  }
+
+  /* SECTION base */
+  section {
+    padding: 6rem 5%;
+    position: relative;
+    z-index: 1;
+  }
+
+  .section-label {
+    font-size: 0.78rem;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    color: var(--purple-300);
+    font-weight: 500;
+    margin-bottom: 0.75rem;
+  }
+
+  .section-title {
+    font-family: 'Playfair Display', serif;
+    font-size: clamp(2rem, 4vw, 3rem);
+    font-weight: 700;
+    color: #fff;
+    line-height: 1.15;
+    margin-bottom: 1rem;
+  }
+
+  .divider {
+    width: 48px;
+    height: 2px;
+    background: var(--purple-500);
+    margin-bottom: 2.5rem;
+    border-radius: 2px;
+  }
+
+  /* SOBRE */
+  .about-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 4rem;
+    align-items: center;
+  }
+
+  .about-text p {
+    color: var(--muted);
+    margin-bottom: 1rem;
+    font-size: 1rem;
+  }
+
+  .about-text p strong {
+    color: var(--text);
+    font-weight: 500;
+  }
+
+  .about-stats {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1.2rem;
+  }
+
+  .stat-card {
+    background: rgba(124,58,237,0.08);
+    border: 1px solid rgba(124,58,237,0.2);
+    border-radius: 0.75rem;
+    padding: 1.5rem;
+    text-align: center;
+    transition: border-color 0.2s, transform 0.2s;
+  }
+
+  .stat-card:hover {
+    border-color: rgba(124,58,237,0.5);
+    transform: translateY(-3px);
+  }
+
+  .stat-number {
+    font-family: 'Playfair Display', serif;
+    font-size: 2.2rem;
+    font-weight: 700;
+    color: var(--purple-300);
+    line-height: 1;
+  }
+
+  .stat-label {
+    font-size: 0.82rem;
+    color: var(--muted);
+    margin-top: 0.4rem;
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+  }
+
+  /* HABILIDADES */
+  #habilidades {
+    background: rgba(26,16,48,0.6);
+    border-top: 1px solid rgba(124,58,237,0.1);
+    border-bottom: 1px solid rgba(124,58,237,0.1);
+  }
+
+  .skills-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1.5rem;
+    margin-top: 1rem;
+  }
+
+  .skill-group {
+    background: rgba(15,10,30,0.6);
+    border: 1px solid rgba(124,58,237,0.2);
+    border-radius: 0.75rem;
+    padding: 1.5rem;
+    transition: border-color 0.2s;
+  }
+
+  .skill-group:hover { border-color: rgba(124,58,237,0.5); }
+
+  .skill-group h3 {
+    font-family: 'Playfair Display', serif;
+    font-size: 1rem;
+    color: var(--purple-300);
+    margin-bottom: 1rem;
+    font-weight: 700;
+  }
+
+  .skill-item {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+    margin-bottom: 0.85rem;
+  }
+
+  .skill-dot {
+    width: 6px;
+    height: 6px;
+    border-radius: 50%;
+    background: var(--purple-500);
+    flex-shrink: 0;
+  }
+
+  .skill-name {
+    font-size: 0.9rem;
+    color: var(--text);
+    flex: 1;
+  }
+
+  .skill-bar-bg {
+    width: 60px;
+    height: 3px;
+    background: rgba(124,58,237,0.2);
+    border-radius: 2px;
+    overflow: hidden;
+  }
+
+  .skill-bar {
+    height: 100%;
+    background: var(--purple-400, #a78bfa);
+    border-radius: 2px;
+    transition: width 1s ease;
+  }
+
+  /* PROJETOS */
+  .projects-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    gap: 1.5rem;
+    margin-top: 1rem;
+  }
+
+  .project-card {
+    background: rgba(26,16,48,0.7);
+    border: 1px solid rgba(124,58,237,0.2);
+    border-radius: 1rem;
+    overflow: hidden;
+    transition: transform 0.25s, border-color 0.25s, box-shadow 0.25s;
+  }
+
+  .project-card:hover {
+    transform: translateY(-5px);
+    border-color: rgba(124,58,237,0.55);
+    box-shadow: 0 16px 40px rgba(124,58,237,0.15);
+  }
+
+  .project-thumb {
+    height: 180px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 3.5rem;
+    position: relative;
+    overflow: hidden;
+  }
+
+  .project-thumb-1 { background: linear-gradient(135deg, #1e0a3c 0%, #3b0f6e 100%); }
+  .project-thumb-2 { background: linear-gradient(135deg, #0a1e3c 0%, #0f3b6e 100%); }
+  .project-thumb-3 { background: linear-gradient(135deg, #1e300a 0%, #2a5010 100%); }
+
+  .project-body {
+    padding: 1.5rem;
+  }
+
+  .project-tag {
+    font-size: 0.72rem;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: var(--purple-300);
+    font-weight: 500;
+    margin-bottom: 0.5rem;
+  }
+
+  .project-title {
+    font-family: 'Playfair Display', serif;
+    font-size: 1.2rem;
+    color: #fff;
+    font-weight: 700;
+    margin-bottom: 0.5rem;
+  }
+
+  .project-desc {
+    font-size: 0.88rem;
+    color: var(--muted);
+    line-height: 1.6;
+  }
+
+  /* FOOTER */
+  footer {
+    padding: 3rem 5%;
+    border-top: 1px solid rgba(124,58,237,0.15);
+    text-align: center;
+    color: var(--muted);
+    font-size: 0.85rem;
+    position: relative;
+    z-index: 1;
+  }
+
+  footer a {
+    color: var(--purple-300);
+    text-decoration: none;
+  }
+
+  footer span {
+    color: var(--purple-500);
+    margin: 0 0.3rem;
+  }
+
+  /* ANIMATIONS */
+  @keyframes fadeUp {
+    from { opacity: 0; transform: translateY(24px); }
+    to   { opacity: 1; transform: translateY(0); }
+  }
+
+  .reveal {
+    opacity: 0;
+    transform: translateY(24px);
+    transition: opacity 0.7s ease, transform 0.7s ease;
+  }
+
+  .reveal.visible {
+    opacity: 1;
+    transform: none;
+  }
+
+  /* RESPONSIVE */
+  @media (max-width: 768px) {
+    .about-grid { grid-template-columns: 1fr; gap: 2rem; }
+    .skills-grid { grid-template-columns: 1fr 1fr; }
+    .nav-links { display: none; }
+  }
+
+  @media (max-width: 480px) {
+    .skills-grid { grid-template-columns: 1fr; }
+    .about-stats { grid-template-columns: 1fr 1fr; }
+  }
+</style>
 </head>
 <body>
 
-    <header>
-        <img src="https://via.placeholder.com/180" alt="Sua Foto" class="profile-img">
-        <h1>Seu Nome Aqui</h1>
-        <p class="subtitle">Especialista RM TOTVS | Analista de Dados | Contabilidade</p>
-        <div class="social">
-            <a href="#" style="color: white; font-size: 1.5rem; margin: 0 10px;"><i class="fab fa-linkedin"></i></a>
-            <a href="#" style="color: white; font-size: 1.5rem; margin: 0 10px;"><i class="fab fa-github"></i></a>
-        </div>
-    </header>
+<!-- NAV -->
+<nav>
+  <a class="logo" href="#">MR</a>
+  <ul class="nav-links">
+    <li><a href="#sobre">Sobre</a></li>
+    <li><a href="#habilidades">Habilidades</a></li>
+    <li><a href="#projetos">Projetos</a></li>
+  </ul>
+</nav>
 
-    <section id="sobre">
-        <h2>Sobre Mim</h2>
-        <p>Analista focado em otimização de processos contábeis e financeiros utilizando o ecossistema <strong>TOTVS RM</strong> e <strong>Power BI</strong>. Especialista em transformar dados brutos em inteligência de negócio, com sólida base técnica em SQL e Power Query.</p>
-    </section>
+<!-- HERO -->
+<section class="hero">
+  <div class="hero-content">
+    <div class="hero-tag">Contador & Analista Financeiro</div>
+    <h1>Marcos<br><span>Roberto</span></h1>
+    <p class="hero-subtitle">Profissional de contabilidade com foco em precisão, análise financeira e soluções estratégicas para empresas e pessoas.</p>
+    <div class="hero-badges">
+      <span class="badge">Contabilidade Fiscal</span>
+      <span class="badge">Auditoria</span>
+      <span class="badge">Gestão Financeira</span>
+      <span class="badge">DP / RH</span>
+    </div>
+    <div class="hero-cta">
+      <a href="#projetos" class="btn-primary">Ver meus trabalhos</a>
+      <a href="#sobre" class="btn-outline">Saiba mais</a>
+    </div>
+  </div>
+  <div class="hero-line"></div>
+</section>
 
-    <section id="portfolio">
-        <h2>Trabalhos Realizados</h2>
-        <div class="grid">
-            <div class="card">
-                <h3>Automação de Análise Contábil de Encargos</h3>
-                <p>Desenvolvimento de solução para conferência automatizada de encargos sociais, integrando dados do RM Labore/Chronus com dashboards dinâmicos.</p>
-                <div class="skills-tag">Power BI</div>
-                <div class="skills-tag">SQL Server</div>
-                <div class="skills-tag">Excel VBA</div>
-            </div>
-            
-            <div class="card">
-                <h3>Relatórios RM TOTVS</h3>
-                <p>Criação de sentenças SQL complexas e geradores de saídas para conformidade contábil e auditoria interna.</p>
-                <div class="skills-tag">TOTVS RM</div>
-                <div class="skills-tag">Consultas SQL</div>
-            </div>
-        </div>
-    </section>
+<!-- SOBRE -->
+<section id="sobre">
+  <div class="about-grid">
+    <div class="about-text reveal">
+      <div class="section-label">Sobre mim</div>
+      <h2 class="section-title">Experiência que<br>gera resultados</h2>
+      <div class="divider"></div>
+      <p>Sou <strong>Marcos Roberto</strong>, contador com sólida experiência em contabilidade fiscal, tributária e gerencial. Atuo com comprometimento e ética na entrega de resultados financeiros concretos.</p>
+      <p>Minha trajetória é construída sobre <strong>análise apurada, conformidade legal e suporte estratégico</strong> a negócios de diferentes segmentos, sempre buscando otimizar processos e reduzir riscos.</p>
+      <p>Acredito que uma boa contabilidade vai além dos números — ela é a base para decisões inteligentes.</p>
+    </div>
+    <div class="about-stats reveal">
+      <div class="stat-card">
+        <div class="stat-number">5+</div>
+        <div class="stat-label">Anos de experiência</div>
+      </div>
+      <div class="stat-card">
+        <div class="stat-number">50+</div>
+        <div class="stat-label">Clientes atendidos</div>
+      </div>
+      <div class="stat-card">
+        <div class="stat-number">100%</div>
+        <div class="stat-label">Comprometimento</div>
+      </div>
+      <div class="stat-card">
+        <div class="stat-number">0</div>
+        <div class="stat-label">Pendências fiscais</div>
+      </div>
+    </div>
+  </div>
+</section>
 
-    <section id="skills">
-        <h2>Habilidades Técnicas</h2>
-        <div>
-            <span class="skills-tag">Power BI & DAX</span>
-            <span class="skills-tag">SQL Server (T-SQL)</span>
-            <span class="skills-tag">Power Query (M)</span>
-            <span class="skills-tag">RM TOTVS (BackOffice/RH)</span>
-            <span class="skills-tag">Contabilidade Digital</span>
-            <span class="skills-tag">Análise de Dados</span>
-        </div>
-    </section>
+<!-- HABILIDADES -->
+<section id="habilidades">
+  <div class="reveal">
+    <div class="section-label">Competências</div>
+    <h2 class="section-title">Habilidades & Ferramentas</h2>
+    <div class="divider"></div>
+  </div>
+  <div class="skills-grid reveal">
+    <div class="skill-group">
+      <h3>Contabilidade</h3>
+      <div class="skill-item"><div class="skill-dot"></div><span class="skill-name">Escrituração Contábil</span><div class="skill-bar-bg"><div class="skill-bar" style="width:95%"></div></div></div>
+      <div class="skill-item"><div class="skill-dot"></div><span class="skill-name">Balancetes e Balanço</span><div class="skill-bar-bg"><div class="skill-bar" style="width:92%"></div></div></div>
+      <div class="skill-item"><div class="skill-dot"></div><span class="skill-name">DRE / Fluxo de Caixa</span><div class="skill-bar-bg"><div class="skill-bar" style="width:88%"></div></div></div>
+      <div class="skill-item"><div class="skill-dot"></div><span class="skill-name">Auditoria Interna</span><div class="skill-bar-bg"><div class="skill-bar" style="width:80%"></div></div></div>
+    </div>
+    <div class="skill-group">
+      <h3>Área Fiscal &amp; Tributária</h3>
+      <div class="skill-item"><div class="skill-dot"></div><span class="skill-name">Simples Nacional</span><div class="skill-bar-bg"><div class="skill-bar" style="width:95%"></div></div></div>
+      <div class="skill-item"><div class="skill-dot"></div><span class="skill-name">Lucro Presumido/Real</span><div class="skill-bar-bg"><div class="skill-bar" style="width:90%"></div></div></div>
+      <div class="skill-item"><div class="skill-dot"></div><span class="skill-name">SPED / EFD</span><div class="skill-bar-bg"><div class="skill-bar" style="width:85%"></div></div></div>
+      <div class="skill-item"><div class="skill-dot"></div><span class="skill-name">IRPF / IRPJ</span><div class="skill-bar-bg"><div class="skill-bar" style="width:88%"></div></div></div>
+    </div>
+    <div class="skill-group">
+      <h3>Ferramentas</h3>
+      <div class="skill-item"><div class="skill-dot"></div><span class="skill-name">Domínio Sistemas</span><div class="skill-bar-bg"><div class="skill-bar" style="width:90%"></div></div></div>
+      <div class="skill-item"><div class="skill-dot"></div><span class="skill-name">Excel Avançado</span><div class="skill-bar-bg"><div class="skill-bar" style="width:92%"></div></div></div>
+      <div class="skill-item"><div class="skill-dot"></div><span class="skill-name">Contabilizei / Omie</span><div class="skill-bar-bg"><div class="skill-bar" style="width:80%"></div></div></div>
+      <div class="skill-item"><div class="skill-dot"></div><span class="skill-name">e-CAC / Gov.br</span><div class="skill-bar-bg"><div class="skill-bar" style="width:95%"></div></div></div>
+    </div>
+  </div>
+</section>
 
-    <footer>
-        <p>&copy; 2026 - Desenvolvido por Você | São Luís - MA</p>
-    </footer>
+<!-- PROJETOS -->
+<section id="projetos">
+  <div class="reveal">
+    <div class="section-label">Portfólio</div>
+    <h2 class="section-title">Trabalhos Realizados</h2>
+    <div class="divider"></div>
+  </div>
+  <div class="projects-grid reveal">
+    <div class="project-card">
+      <div class="project-thumb project-thumb-1">📊</div>
+      <div class="project-body">
+        <div class="project-tag">Gestão Financeira</div>
+        <div class="project-title">Reestruturação Financeira</div>
+        <p class="project-desc">Reorganização completa do fluxo de caixa e controles contábeis de empresa do setor varejista, reduzindo inadimplência em 30%.</p>
+      </div>
+    </div>
+    <div class="project-card">
+      <div class="project-thumb project-thumb-2">📋</div>
+      <div class="project-body">
+        <div class="project-tag">Consultoria Tributária</div>
+        <div class="project-title">Planejamento Tributário</div>
+        <p class="project-desc">Elaboração de planejamento tributário para empresa de serviços, resultando em economia fiscal significativa e enquadramento otimizado.</p>
+      </div>
+    </div>
+    <div class="project-card">
+      <div class="project-thumb project-thumb-3">📁</div>
+      <div class="project-body">
+        <div class="project-tag">Departamento Pessoal</div>
+        <div class="project-title">Implantação de DP</div>
+        <p class="project-desc">Estruturação completa do departamento pessoal para empresa com 40 colaboradores, incluindo folha, eSocial e obrigações acessórias.</p>
+      </div>
+    </div>
+  </div>
+</section>
 
+<!-- FOOTER -->
+<footer>
+  <p>© 2025 <strong>Marcos Roberto</strong> <span>·</span> Contador <span>·</span> Desenvolvido com dedicação</p>
+</footer>
+
+<script>
+  // Scroll reveal
+  const reveals = document.querySelectorAll('.reveal');
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach(e => {
+      if (e.isIntersecting) {
+        e.target.classList.add('visible');
+        observer.unobserve(e.target);
+      }
+    });
+  }, { threshold: 0.12 });
+  reveals.forEach(r => observer.observe(r));
+</script>
 </body>
 </html>
